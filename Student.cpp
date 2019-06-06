@@ -26,12 +26,17 @@ Student::Student(const Student& a)
 	cource_ = a.cource_;	
 }
 
-Student::operator=(const Student& a)
+Student& Student::operator=(const Student& a)
 {
+	if (this == &a)
+		return (*this);
+
 	id_ = a.id_;
 	mog_ = a.mog_;
 	name_ = a.name_;
 	cource_ = a.cource_;
+
+	return (*this);
 }
 
 string Student::Name()
